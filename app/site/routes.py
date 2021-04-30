@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import current_user
 
 site = Blueprint('site', __name__)
@@ -16,5 +16,10 @@ def login():
 
 @site.route('/login', methods=["POST"])
 def login_post():
-    print("log in ")
+    email_entry = request.form.get('email_entry')
+    password_entry = request.form.get('password_entry')
+
+    print(email_entry)
+    print(password_entry)
+
     return redirect(url_for('site.index'))
