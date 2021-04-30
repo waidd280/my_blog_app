@@ -2,9 +2,6 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
-from .api.routes import api as api_blueprint
-from .site.routes import site as site_blueprint
-
 db = SQLAlchemy()
 
 def create_app():
@@ -24,10 +21,10 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
     
-    from .api.routes import api as api_blueprint
+    from .api_routes import api as api_blueprint
     app.register_blueprint(api_blueprint)
 
-    from .site.routes import site as site_blueprint
+    from .site_routes import site as site_blueprint
     app.register_blueprint(site_blueprint)
 
     return app
