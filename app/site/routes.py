@@ -23,3 +23,7 @@ def login_post():
     print(password_entry)
 
     return redirect(url_for('site.index'))
+
+@site.route('/signup')
+def signup():
+    return render_template('signup.html', pagetitle="Sign Up")
