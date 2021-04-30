@@ -4,6 +4,18 @@
 <div id="title-side">
     <h1 onclick="greet()">BlogApp</h1>
 </div>
+
+<div id="login-side">
+    <form action="/login" method="POST">
+        <label for="email_entry">Email: </label>
+        <input id="email_entry" name="email_entry" type="email" />
+        <br />
+        <label for="password_entry">Password: </label>
+        <input id="password_entry" name="password_entry" type="password" />
+        <br />
+        <input type="submit" value="Log In" />
+    </form>
+</div>
 {% endblock body %}
 
 {% block script %}
