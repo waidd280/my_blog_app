@@ -4,4 +4,8 @@ env/
 # pycache
 __pycache__/
 
+# exclude db file 
 *.db
+
+# do not include secret key
+app/secret_key.py
