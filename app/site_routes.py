@@ -25,12 +25,12 @@ def login_post():
     user = User.query.filter_by(email=email_entry).first()
     if user is None:
         flash("No user associated with that email address")
-        return render_template('login.html')
+        return render_template('login.html', pagetitle="Login")
 
     else:
         if not check_password_hash(user.password, password_entry):
             flash("Incorrect Password")
-            return render_template('login.html')
+            return render_template('login.html', pagetitle="Login")
 
     login_user(user)
     return redirect(url_for('site.index'))

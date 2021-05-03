@@ -6,8 +6,63 @@ Colors:
     orange: #B82601
 */
 
+body{
+    background-color: black;
+}
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
 #title-side{
     background-color: #813772;
     width: 50%;
     height: 100%;
+}
+
+.alert-msg{
+    background-color: rgb(255, 72, 72);
+    max-width: 25%;
+    color: white;
+    border: 2px solid rgb(223, 223, 223);
+    border-radius: 7px;
+    padding: 6px;
+    text-align: center;
+    margin: 15px;
+}
+
+.entrybox{
+    color: black;
+}
+
+.formbox{
+    align-items: right;
+}
+
+.form-container{
+    background-color: #062F4F;
+    padding: 15px;
+    max-width: 40%;
+    align-items: center;
+    text-align: center;
+    border: 6px solid #813772;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#password_entry{
+    position: relative;
+    right: 13px;
+}
+
+.password_label{
+    position: relative;
+    right: 13px;
+}
+
+.page-title{
+    font-size: 56px;
+    color: #B82601;
+    text-align: center;
 }

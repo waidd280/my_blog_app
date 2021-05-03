@@ -1,25 +1,28 @@
 {% extends 'base.html'%}
 
 {% block body %}
-<div id="title-side">
-    <h1 onclick="greet()">BlogApp</h1>
+<div>
+    <h1 class="page-title">BlogApp</h1>
 </div>
 
 {% with messages = get_flashed_messages() %}
     {% if messages %}
-        <div class="alert_msg">{{ messages[0] }}</div>
+        <div class="alert-msg">{{ messages[0] }}</div>
     {% endif %}
 {% endwith %}
 
-<div id="login-side">
+<div class="form-container">
     <form action="/login" method="POST">
         <label for="email_entry">Email: </label>
-        <input id="email_entry" name="email_entry" type="email" />
+        <input class="entrybox" id="email_entry" name="email_entry" type="email" />
         <br />
-        <label for="password_entry">Password: </label>
-        <input id="password_entry" name="password_entry" type="password" />
         <br />
-        <input type="submit" value="Log In" onClick="checkEntry()" />
+        <label class="password_label" for="password_entry">Password: </label>
+        <input class="entrybox" id="password_entry" name="password_entry" type="password" />
+        <br />
+        <br />
+        <input class="entrybox" type="submit" value="Log In" onClick="checkEntry()" />
+        <br />
     </form>
 </div>
 {% endblock body %}

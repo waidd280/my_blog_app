@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block body %}
-<h1>Sign Up</h1>
+<h1 class="page-title">Sign Up</h1>
 
 {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -9,18 +9,21 @@
     {% endif %}
 {% endwith %}
 
-<div>
-    <form action="/signup" method="POST">
+<div class="form-container">
+    <form class="formbox" action="/signup" method="POST">
         <label for="email_entry">Email: </label>
-        <input id="email_entry" name="email_entry" type="email" />
+        <input class="entrybox" id="email_entry" name="email_entry" type="email" />
+        <br />
         <br />
         <label for="name_entry">Name: </label>
-        <input id="name_entry" name="name_entry" type="text" />
+        <input class="entrybox" id="name_entry" name="name_entry" type="text" />
         <br />
-        <label for="password_entry">Password: </label>
-        <input id="password_entry" name="password_entry" type="password" />
         <br />
-        <input type="submit" value="Log In" onClick="checkEntry()" />
+        <label class="password_label" for="password_entry">Password: </label>
+        <input class="entrybox" id="password_entry" name="password_entry" type="password" />
+        <br />
+        <br />
+        <input class="entrybox" type="submit" value="Log In" onClick="checkEntry()" />
     </form>
 </div>
 {% endblock body %}
