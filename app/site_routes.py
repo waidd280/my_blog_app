@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, get_flashed_messages
 from flask_login import current_user, login_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
@@ -56,7 +56,6 @@ def signup_post():
             return redirect(url_for('site.login'))
 
         flash("The email is already associated with an account")
-        return redirect(url_for('site.signup'))
+        return render_template('signup.html', pagetitle="Sign Up")
 
-    flash("All fields must be filled")
     return redirect(url_for('site.signup'))
