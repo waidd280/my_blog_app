@@ -22,3 +22,4 @@ class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     answer_text = db.Column(db.String(800), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
