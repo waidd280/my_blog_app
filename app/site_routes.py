@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, get_flashed_messages
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from . import db
@@ -40,6 +40,7 @@ def login_post():
     return redirect(url_for('site.index'))
 
 @site.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('site.index'))
