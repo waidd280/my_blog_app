@@ -10,13 +10,6 @@ site = Blueprint('site', __name__)
 def index():
     return render_template('index.html', pagetitle="Home")
 
-@site.route('/home')
-def home():
-    if current_user.is_authenticated:
-        return render_template('home.html', pagetitle="Home")
-    
-    return redirect(url_for('site.login'))
-
 @site.route('/login')
 def login():
     return render_template('login.html', pagetitle="Login")
@@ -37,7 +30,7 @@ def login_post():
             return render_template('login.html', pagetitle="Login")
 
     login_user(user)
-    return redirect(url_for('site.home'))
+    return redirect(url_for('site.index'))
 
 @site.route('/logout')
 @login_required
