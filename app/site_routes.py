@@ -65,8 +65,19 @@ def signup_post():
 
 @site.route("/post-question")
 @login_required
-def post_question():
+def add_question():
     return render_template("post_question.html", pagetitle="Post a Question")
+
+@site.route("/post-question", methods=["POST"])
+@login_required
+def add_question_post():
+    question_title = request.form.get('question-title')
+    question_info = request.form.get('question-info')
+
+    print(question_title)
+    print(question_info)
+    
+    return redirect(url_for('site.index'))
 
 @site.route("/search")
 def search_site():
