@@ -3,10 +3,18 @@
     <head>
         <title>BlogApp - {{ pagetitle }}</title>
         <link rel="stylesheet" href={{ url_for("static", filename="css/style.css") }}>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <navbar id="main-nav">
-                <a id="home-nav" class="navbar-item" href="/">Home</a>
+                <a id="home-nav" class="navbar-item" href="/"><i class="fa fa-home"></i></a>
+                <div id="search-form-container">
+                    <form id="search-form" action="/search" method="GET">
+                        <input type="text" name="terms" id="search-term" />
+                        <button id="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
                 {% if not current_user.is_authenticated %}
                     <a class="navbar-item" href="/login">Log In</a>
                     <a class="navbar-item" href="/signup">Sign Up</a>

@@ -93,7 +93,7 @@ body{
     text-decoration: none;
     font-size: 18px;
     position: relative;
-    top: 20px;
+    top: 3px;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
@@ -141,4 +141,33 @@ body{
 
 .qbtn-container:hover{
     background-color: #1a75bb;
+}
+
+#search-btn{
+    background-color: #461b3d;
+    border-radius: 2px;
+    display: inline;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#search-form{
+    display: inline;
+}
+
+#search-form-container{
+    margin-left: 35px;
+    margin-right: 35px;
+    right: 300px;
+    display: inline;
+}
+
+#search-term{
+    background-color: #461b3d;
+    margin-top: 15px;
+    display: inline;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
