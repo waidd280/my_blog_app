@@ -171,3 +171,30 @@ body{
     border: none;
     border-radius: 5px;
 }
+
+#question-post-container{
+    margin: auto;
+    width: 50%;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+#question-title-entry{
+    width: 90%;
+    color: black;
+}
+
+#question-info-entry{
+    color: black;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#submit-question-btn{
+    background-color: #062F4F;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}

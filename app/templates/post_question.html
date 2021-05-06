@@ -2,4 +2,35 @@
 
 {% block body %}
 <h1 class="page-title">Post a Question</h1>
+
+<div id="question-post-container">
+    <form method="POST">
+        <label for="question-title-entry">
+            <b>Title: </b> 
+            <br />
+            <span>What is your question? Be clear and specific.</span>
+        </label>
+        <br />
+        <input type="text" id="question-title-entry" name="question-title" 
+        maxlength="200"/>
+        
+        <br />
+        <br />
+        <br />
+
+        <label for="question-info-entry">
+            <b>Info: </b>
+            <br>
+            <span>Provide any information that might help others better understand your question.</span>
+        </label>
+        <br />
+        <textarea id="question-info-entry" name="question-info"
+        rows="15" cols="57"></textarea>
+
+        <br />
+        <br />
+        
+        <button id="submit-question-btn" type="submit">Post Question</button>
+    </form>
+</div>
 {% endblock body %}

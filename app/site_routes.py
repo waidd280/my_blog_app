@@ -83,5 +83,4 @@ def search_site():
     if spaces_only: 
         return redirect(url_for('site.index'))
 
-    print(search_terms)
     return render_template('search_results.html', pagetitle=search_terms)
