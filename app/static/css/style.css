@@ -129,5 +129,12 @@ body{
 }
 
 .qbtn-container{
-    margin: auto;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 400px;
+    right: 570px;
+    background-color: #062F4F;
+    padding: 15px;
+    border-radius: 8px;
 }
