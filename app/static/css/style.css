@@ -68,8 +68,42 @@ body{
     font-size: 56px;
     color: #B82601;
     text-align: center;
+    position: relative;
+    top: 35px;
 }
 
 #main-title{
     color: white;
+    position: relative;
+    top: 80px;
+}
+
+#main-nav{
+    background-color: #813772;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 60px;
+    align-items: right;
+    text-align: right;
+}
+
+.navbar-item{
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 18px;
+}
+
+.navbar-item:hover{
+    background-color: #062F4F;
+}
+
+#logout-btn:hover{
+    background-color: #B82601;
 }
