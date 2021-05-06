@@ -112,3 +112,9 @@ body{
     position: relative;
     top: 180px;
 }
+
+#home-nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
