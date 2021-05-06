@@ -107,3 +107,8 @@ body{
 #logout-btn:hover{
     background-color: #B82601;
 }
+
+#homepage-title{
+    position: relative;
+    top: 180px;
+}
