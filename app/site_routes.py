@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, get_flashed_messages
-from flask_login import current_user, login_user
+from flask_login import current_user, login_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from . import db
@@ -8,6 +8,10 @@ site = Blueprint('site', __name__)
 
 @site.route('/')
 def index():
+    return render_template('index.html', pagetitle="Home")
+
+@site.route('/home')
+def home():
     if current_user.is_authenticated:
         return render_template('home.html', pagetitle="Home")
     
@@ -33,6 +37,11 @@ def login_post():
             return render_template('login.html', pagetitle="Login")
 
     login_user(user)
+    return redirect(url_for('site.index'))
+
+@site.route('/logout')
+def logout():
+    logout_user()
     return redirect(url_for('site.index'))
 
 @site.route('/signup')
