@@ -118,3 +118,16 @@ body{
     top: 0px;
     left: 0px;
 }
+
+.post-question-btn{
+    margin: auto;
+}
+
+.post-question-btn{
+    text-decoration: none;
+    margin: auto;
+}
+
+.qbtn-container{
+    margin: auto;
+}

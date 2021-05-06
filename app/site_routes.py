@@ -37,7 +37,7 @@ def login_post():
             return render_template('login.html', pagetitle="Login")
 
     login_user(user)
-    return redirect(url_for('site.index'))
+    return redirect(url_for('site.home'))
 
 @site.route('/logout')
 @login_required
@@ -69,3 +69,8 @@ def signup_post():
         return render_template('signup.html', pagetitle="Sign Up")
 
     return redirect(url_for('site.signup'))
+
+@site.route("/post-question")
+@login_required
+def post_question():
+    return render_template("post_question.html", pagetitle="Post a Question")

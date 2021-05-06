@@ -2,5 +2,10 @@
 
 {% block body %}
 <h1 id="homepage-title" class="page-title">Welcome to BlogApp</h1>
+{% if current_user.is_authenticated %}
+    <div class="qbtn-container">
+        <a class="post-question-btn" href="/post-question">Post a Question</a>
+    </div>
+{% endif %}
 {% endblock body %}
 
