@@ -30,4 +30,7 @@ def create_app():
     from .site_routes import site as site_blueprint
     app.register_blueprint(site_blueprint)
 
+    from .question_routes import questions as questions_blueprint
+    app.register_blueprint(questions_blueprint)
+
     return app
