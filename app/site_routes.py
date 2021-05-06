@@ -67,3 +67,21 @@ def signup_post():
 @login_required
 def post_question():
     return render_template("post_question.html", pagetitle="Post a Question")
+
+@site.route("/search")
+def search_site():
+    search_terms = request.args.get('terms')
+
+    spaces_only = True
+    if search_terms == '':
+        return redirect(url_for('site.index'))
+    for char in search_terms: 
+        if char != ' ':
+            spaces_only = False
+            break
+    
+    if spaces_only: 
+        return redirect(url_for('site.index'))
+
+    print(search_terms)
+    return render_template('search_results.html', pagetitle=search_terms)
