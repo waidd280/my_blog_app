@@ -138,3 +138,7 @@ body{
     padding: 15px;
     border-radius: 8px;
 }
+
+.qbtn-container:hover{
+    background-color: #1a75bb;
+}
