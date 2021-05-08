@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, get_flashed_messages
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
-from .models import User
+from .models import User, Question
 from . import db
 
 site = Blueprint('site', __name__)
@@ -74,8 +74,20 @@ def add_question_post():
     question_title = request.form.get('question-title')
     question_info = request.form.get('question-info')
 
-    print(question_title)
-    print(question_info)
+    spaces_only = True
+    if question_title == '':
+        return redirect(url_for('site.index'))
+    for char in question_title:
+        if char != " ":
+            spaces_only = False
+            break
+    if spaces_only:
+        return redirect(url_for('site.index'))
+    
+    new_question = Question(question_title=question_title, 
+    question_info=question_info, user_id=current_user.id)
+    db.session.add(new_question)
+    db.session.commit()
     
     return redirect(url_for('site.index'))
 
@@ -93,5 +105,8 @@ def search_site():
     
     if spaces_only: 
         return redirect(url_for('site.index'))
+
+    search_results = Question.query.filter_by(question_title=search_terms).first()
+    print(search_results)
 
     return render_template('search_results.html', pagetitle=search_terms)
