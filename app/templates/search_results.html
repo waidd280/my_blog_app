@@ -2,4 +2,15 @@
 
 {% block body %}
 <h1 class="page-title">Results: </h1>
+
+<div class="search-result-container">
+    {% for result in results %}
+        <a class="question-link" href=/questions/{{result.id}}>
+            <div class="search-result">
+                <h2>{{ result.question_title }}</h2>
+                <span>{{ result.user_id }}</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>
 {% endblock body%}

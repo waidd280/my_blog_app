@@ -198,3 +198,25 @@ body{
     border-radius: 5px;
     padding: 5px;
 }
+
+.search-result-container{
+    width: 70%;
+    background-color: #062F4F;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 80px auto 40px auto;
+}
+
+.search-result{
+    background-color: gray;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.search-result{
+    text-decoration: none;
+}
+
+.question-link{
+    text-decoration: none;
+}

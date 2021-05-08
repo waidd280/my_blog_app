@@ -92,6 +92,7 @@ def add_question_post():
     return redirect(url_for('site.index'))
 
 @site.route("/search")
+@login_required
 def search_site():
     search_terms = request.args.get('terms')
 
@@ -105,8 +106,12 @@ def search_site():
     
     if spaces_only: 
         return redirect(url_for('site.index'))
+    """
+    search_results = Question.query.filter_by(question_title=search_terms).all()
+    print(search_results)"""
+    search_results = Question.query.all()
+    for search_result in search_results:
+        search_result.user_id = User.query.filter_by(id=search_result.user_id).first().name
 
-    search_results = Question.query.filter_by(question_title=search_terms).first()
-    print(search_results)
-
-    return render_template('search_results.html', pagetitle=search_terms)
+    return render_template('search_results.html', pagetitle="Search " + '"' + search_terms + '"', 
+    results=search_results)
