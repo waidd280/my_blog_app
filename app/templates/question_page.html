@@ -13,6 +13,8 @@
 
 {% if not page_question.answers %}
     <p class="no-answers-message">There are no answers posted for this question yet...</p>
+{% else %}
+    <br />
 {% endif %}
 
 <div class="post-answer-box">
@@ -34,6 +36,17 @@
         </div>
     </form>
 </div>
+
+{% if page_question.answers %}
+    {% for answer in page_question.answers %}
+        <div class="answer-component">
+            <p>{{ answer.answer_text }}</p>
+            <br />
+            <span>{{ users.query.filter_by(id=answer.user_id).first().name }}</span>
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% endblock %}
 
 {% block script %}
