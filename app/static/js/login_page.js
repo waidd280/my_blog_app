@@ -12,3 +12,7 @@ function checkEntry(){
         alert("All fields must be filled");
     }
 }
+
+function must_login(){
+    alert("You must log in to post a question");
+}
