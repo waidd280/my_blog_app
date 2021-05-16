@@ -22,7 +22,8 @@
         <div class="post-answer-container">
             {% if current_user.is_authenticated %}
             <textarea class="post-answer" rows=5 cols=65 
-            placeholder="Have an answer? Share it here." name="answer-content"></textarea>
+            placeholder="Have an answer? Share it here." 
+            maxlength="10000" name="answer-content"></textarea>
             <button type="submit" id="submit-answer-btn">Post Answer</button>
             {% else %}
             <label>You must <a href='/login'>log in</a> to add an answer</label>
