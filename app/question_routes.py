@@ -8,5 +8,7 @@ def test_q(question_id):
     page_question = Question.query.filter_by(id=question_id).first()
     question_author = User.query.filter_by(id=page_question.user_id).first().name
 
+    print(page_question.answers)
+
     return render_template('question_page.html', pagetitle=page_question.question_title, 
     page_question=page_question, question_author=question_author)

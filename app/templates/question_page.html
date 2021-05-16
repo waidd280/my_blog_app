@@ -10,4 +10,18 @@
 
     <p>{{ page_question.question_info }}</p>
 </div>
+
+{% if not page_question.answers %}
+    <p class="no-answers-message">There are no answers posted for this question yet...</p>
+{% endif %}
+
+<div class="post-answer-box">
+    <form method="POST">
+        <h2>Post an answer:</h2>
+        <div class="post-answer-container">
+            <textarea class="post-answer" rows=5 cols=65 name="answer-content"></textarea>
+            <button type="submit" id="submit-answer-btn">Post Answer</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
