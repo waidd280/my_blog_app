@@ -92,7 +92,6 @@ def add_question_post():
     return redirect(url_for('site.index'))
 
 @site.route("/search")
-@login_required
 def search_site():
     search_terms = request.args.get('terms')
 
